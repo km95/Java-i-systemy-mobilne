@@ -2,47 +2,6 @@ import javax.sound.midi.Soundbank;
 
 public class Main {
     public static void main(String[] args) {
-        Item a = new Item("Piasek", Item.ItemCondition.NEW,2.2,10);
-        Item b = new Item("Piasek", Item.ItemCondition.NEW,2.2,8);
-        System.out.println(a.Print());
-        System.out.println(a.compareTo(b));
-        FulfillmentCenter magazyn = new FulfillmentCenter("Kraków",3000);
-        magazyn.addProduct(new Item("Piasek", Item.ItemCondition.NEW,2.2,40));
-        magazyn.addProduct(new Item("Piasek1", Item.ItemCondition.NEW,2.2,40));
-        magazyn.addProduct(new Item("Piasek21", Item.ItemCondition.NEW,2.2,40));
-        magazyn.addProduct(new Item("Kolo", Item.ItemCondition.NEW,2.2,80));
-        magazyn.addProduct(new Item("Kol", Item.ItemCondition.USED,2.2,8));
-        //magazyn.addProduct(b);
-        magazyn.summary();
-       // magazyn.getProduct(new Item("Piasek", Item.ItemCondition.NEW,2.2,));
-       // magazyn.getProduct(b);
-        System.out.println("ten"+a.Print());
-        magazyn.getProduct(a);
-        magazyn.summary();
-        magazyn.removeProduct(new Item("Piasek", Item.ItemCondition.NEW,2.2,10));
-        magazyn.summary();
-        magazyn.summary();
-        magazyn.addProduct(new Item("dom", Item.ItemCondition.NEW,2.2,250));
-        magazyn.addProduct(new Item("Piaseks", Item.ItemCondition.NEW,2.2,50));
-        magazyn.addProduct(new Item("ale", Item.ItemCondition.NEW,2.2,150));
-
-        magazyn.summary();
-        System.out.println();
-        magazyn.searchPartial("Piasek");
-        System.out.println(a.compareTo("Piamek"));
-        System.out.println();
-        System.out.println();
-        magazyn.countByCondition(Item.ItemCondition.USED);
-        magazyn.summary();
-        System.out.println();
-        magazyn.sortByAmount();
-        magazyn.summary();
-        System.out.println();
-        magazyn.max();
-
-
-
-        ///////////
         FulfillmentCenterContainer contenerMagazin = new FulfillmentCenterContainer();
         System.out.println("Tworzenie magazynów :");
         contenerMagazin.addCenter("Krakow",4000);
