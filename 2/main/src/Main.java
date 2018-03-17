@@ -29,6 +29,9 @@ public class Main {
         contenerMagazin.summary();
         System.out.println("Magazyn Wroclaw");
         contenerMagazin.getFulfillmentCenter("Wroclaw").summary();
+        System.out.println("Dodanie produktu do Wroclaw");
+        contenerMagazin.getFulfillmentCenter("Wroclaw").addProduct(new Item("Koszule", Item.ItemCondition.REFURBISHER,1.2,100));
+        contenerMagazin.getFulfillmentCenter("Wroclaw").summary();
         System.out.println("Zmniejszamy produkty w Wroclawiu");
         contenerMagazin.getFulfillmentCenter("Wroclaw").getProduct(new Item("Koszule", Item.ItemCondition.REFURBISHER,1.2,2000));
         contenerMagazin.getFulfillmentCenter("Wroclaw").summary();
@@ -53,8 +56,5 @@ public class Main {
         System.out.println("Wszystkie produkty w Warszawie :");
         contenerMagazin.getFulfillmentCenter("Warszawa").summary();
         contenerMagazin.summary();
-
-
-
     }
 }

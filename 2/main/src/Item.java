@@ -53,8 +53,14 @@ public class Item implements Comparable<Item> {
     public Item(String name, ItemCondition condition, double weight, int quantity) {
         this.name = name;
         this.condition = condition;
-        this.weight = weight;
-        this.quantity = quantity;
+        if (weight<0 || quantity < 0){
+            throw new IllegalArgumentException("wyjatek");
+        }else{
+            this.weight = weight;
+            this.quantity = quantity;
+        }
+
+
     }
     public String Print (){
         return "nazwa : "+name +" / stan : "+ condition +" / waga : "+ weight +" / ilosc : "+ quantity;
