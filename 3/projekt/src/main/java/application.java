@@ -14,8 +14,7 @@ public class application extends JFrame{
     private JButton eventButton;
     private JPanel mainPanel;
     private JScrollPane scrollHistoryTextArea;
-    private JList<String> functionList;
-
+    private JList<Calc> functionList;
     JMenuItem item1 = new JMenuItem("Reset");
     JMenuItem item2 = new JMenuItem("Exit");
     List<String> history = new ArrayList();
@@ -23,6 +22,29 @@ public class application extends JFrame{
     String lastResult="";
 
     public application() {
+        Calc sin = new Calc("sinus", "sin()");
+        Calc cos = new Calc("cosinus", "cos()");
+        Calc tg = new Calc("tangrns", "tg()");
+        Calc mod = new Calc("modulo", "mod( ,)");
+        Calc C = new Calc("Binomial coefficient", "C( ,)");
+        Calc pi = new Calc("PI", "pi");
+        Calc e = new Calc("Euler's number", "e");
+        Calc PN = new Calc("Plastic constant", "[PN]");
+        Calc last = new Calc("last result", "last");
+
+        DefaultListModel<Calc> listModel = new DefaultListModel<>();
+        listModel.addElement(sin);
+        listModel.addElement(cos);
+        listModel.addElement(tg);
+        listModel.addElement(mod);
+        listModel.addElement(C);
+        listModel.addElement(pi);
+        listModel.addElement(e);
+        listModel.addElement(PN);
+        listModel.addElement(last);
+
+        functionList.setModel(listModel);
+
         final JFrame frame = new JFrame("SciCalcu");
         frame.setContentPane(mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -78,45 +100,14 @@ public class application extends JFrame{
             @Override
             public void mouseClicked(MouseEvent e) {
                 //super.mouseClicked(e);
-                if (functionList.getSelectedIndex() == 0) {
-                    formulaInput.setText("sin()");
-                    formulaInput.requestFocus();
-                    formulaInput.setCaretPosition(formulaInput.getText().length()-1);
-                }else if (functionList.getSelectedIndex() == 1) {
-                    formulaInput.setText("cos()");
-                    formulaInput.requestFocus();
-                    formulaInput.setCaretPosition(formulaInput.getText().length()-1);
-                }else if (functionList.getSelectedIndex() == 2) {
-                    formulaInput.setText("tg()");
-                    formulaInput.requestFocus();
-                    formulaInput.setCaretPosition(formulaInput.getText().length()-1);
-                }else if (functionList.getSelectedIndex() == 3) {
-                    formulaInput.setText("mod( ,)");
-                    formulaInput.requestFocus();
-                    formulaInput.setCaretPosition(formulaInput.getText().length() - 2);
-                }else if (functionList.getSelectedIndex() == 4) {
-                    formulaInput.setText("log( ,)");
-                    formulaInput.requestFocus();
-                    formulaInput.setCaretPosition(formulaInput.getText().length() - 2);
-                }else if (functionList.getSelectedIndex() == 5) {
-                    formulaInput.setText("C( ,)");
-                    formulaInput.requestFocus();
-                    formulaInput.setCaretPosition(formulaInput.getText().length() - 2);
-                }else if (functionList.getSelectedIndex() == 6) {
-                    formulaInput.setText("pi");
-                    formulaInput.requestFocus();
-                    formulaInput.setCaretPosition(formulaInput.getText().length());
-                }else if (functionList.getSelectedIndex() == 7) {
-                    formulaInput.setText("e");
-                    formulaInput.requestFocus();
-                    formulaInput.setCaretPosition(formulaInput.getText().length());
-                }else if (functionList.getSelectedIndex() == 8) {
-                    formulaInput.setText("[PN]");
-                    formulaInput.requestFocus();
-                    formulaInput.setCaretPosition(formulaInput.getText().length());
-                }else if (functionList.getSelectedIndex() == 9) {
-                    if (!history.isEmpty()) {
-                        historyTextArea.append(new message().message_1(history.get(history.size() - counter - 1)));
+                if (functionList.getSelectedValue().getName() != null)
+                {
+                    if(functionList.getSelectedValue().getName() == "last result") {
+                        formulaInput.setText(new message().message_2(history.get(history.size() - counter - 1)));
+                    }else {
+                        formulaInput.setText(functionList.getSelectedValue().getCode());
+                        formulaInput.requestFocus();
+                        formulaInput.setCaretPosition(formulaInput.getText().length() - 1);
                     }
                 }
             }

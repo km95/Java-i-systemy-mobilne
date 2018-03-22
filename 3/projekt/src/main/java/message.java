@@ -22,5 +22,13 @@ public class message extends MessageFormat {
     }
        return "";
     }
+    public String message_2(String pattern) {
+
+        Expression ec = new Expression(pattern);
+        Double result = ec.calculate() ;
+        String  res = result.toString();
+
+        return res;
+    }
 
 }

@@ -48,18 +48,7 @@
           </grid>
         </constraints>
         <properties>
-          <model>
-            <item value="sinus"/>
-            <item value="cosinus"/>
-            <item value="tangrns"/>
-            <item value="modulo"/>
-            <item value="logarytm"/>
-            <item value="Binomial coefficient"/>
-            <item value="PI"/>
-            <item value="Euler's number"/>
-            <item value="Plastic constant"/>
-            <item value="last result"/>
-          </model>
+          <model/>
         </properties>
       </component>
     </children>
