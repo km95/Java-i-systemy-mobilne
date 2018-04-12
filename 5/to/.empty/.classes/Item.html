@@ -1,0 +1,190 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Item</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">&lt;empty package name&gt;</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Item (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Item</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (9/ 12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    68,8%
+  </span>
+  <span class="absValue">
+    (22/ 32)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Item$ItemCondition</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/ 4)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    76,9%
+  </span>
+  <span class="absValue">
+    (10/ 13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    72,2%
+  </span>
+  <span class="absValue">
+    (26/ 36)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;public class Item implements Comparable&lt;Item&gt; {
+<i>2</i>&nbsp;    String name;
+<i>3</i>&nbsp;    ItemCondition condition;
+<i>4</i>&nbsp;    double weight;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;    public int getQuantity() {
+<b class="fc"><i>7</i>&nbsp;        return quantity;</b>
+<i>8</i>&nbsp;    }
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;    int quantity;
+<i>11</i>&nbsp;
+<b class="fc"><i>12</i>&nbsp;    public enum ItemCondition{</b>
+<b class="fc"><i>13</i>&nbsp;        NEW,</b>
+<b class="fc"><i>14</i>&nbsp;        USED,</b>
+<b class="fc"><i>15</i>&nbsp;        REFURBISHER</b>
+<i>16</i>&nbsp;    }
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    public int compareTo(Item o) {
+<b class="fc"><i>19</i>&nbsp;        int compare = name.compareTo(o.name);</b>
+<b class="fc"><i>20</i>&nbsp;        if(compare == 0) {</b>
+<b class="fc"><i>21</i>&nbsp;            return name.compareTo(o.name);</b>
+<i>22</i>&nbsp;        }
+<i>23</i>&nbsp;        else {
+<b class="nc"><i>24</i>&nbsp;            return compare;</b>
+<i>25</i>&nbsp;        }
+<i>26</i>&nbsp;    }
+<i>27</i>&nbsp;    public int compareTo(String nameIn){
+<b class="nc"><i>28</i>&nbsp;        int compare = name.compareTo(nameIn);</b>
+<b class="nc"><i>29</i>&nbsp;        if(compare == 0) {</b>
+<b class="nc"><i>30</i>&nbsp;            return name.compareTo(nameIn);</b>
+<i>31</i>&nbsp;        }
+<i>32</i>&nbsp;        else {
+<b class="nc"><i>33</i>&nbsp;            return compare;</b>
+<i>34</i>&nbsp;        }
+<i>35</i>&nbsp;    }
+<i>36</i>&nbsp;    public int compareTo(ItemCondition conditionIn){
+<b class="nc"><i>37</i>&nbsp;        int compare = condition.compareTo(conditionIn);</b>
+<b class="nc"><i>38</i>&nbsp;        if(compare == 0) {</b>
+<b class="nc"><i>39</i>&nbsp;            return condition.compareTo(conditionIn);</b>
+<i>40</i>&nbsp;        }
+<i>41</i>&nbsp;        else {
+<b class="nc"><i>42</i>&nbsp;            return compare;</b>
+<i>43</i>&nbsp;        }
+<i>44</i>&nbsp;    }
+<i>45</i>&nbsp;    public int compareToQuantity(Item o) {
+<b class="nc"><i>46</i>&nbsp;        return o.quantity;</b>
+<i>47</i>&nbsp;    }
+<i>48</i>&nbsp;    public void addWeight(double weight) {
+<b class="fc"><i>49</i>&nbsp;        this.weight += weight;</b>
+<b class="fc"><i>50</i>&nbsp;    }</b>
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;    public void addQuantity(int quantity) {
+<b class="fc"><i>53</i>&nbsp;        this.quantity += quantity;</b>
+<b class="fc"><i>54</i>&nbsp;    }</b>
+<i>55</i>&nbsp;    public void subtractionQuantity(int quantity) {
+<b class="fc"><i>56</i>&nbsp;        this.quantity -= quantity;</b>
+<b class="fc"><i>57</i>&nbsp;    }</b>
+<i>58</i>&nbsp;
+<b class="fc"><i>59</i>&nbsp;    public Item(String name, ItemCondition condition, double weight, int quantity) {</b>
+<b class="fc"><i>60</i>&nbsp;        this.name = name;</b>
+<b class="fc"><i>61</i>&nbsp;        this.condition = condition;</b>
+<b class="fc"><i>62</i>&nbsp;        if (weight&lt;0 || quantity &lt; 0){</b>
+<b class="fc"><i>63</i>&nbsp;            throw new IllegalArgumentException(&quot;wyjatek&quot;);</b>
+<i>64</i>&nbsp;        }else{
+<b class="fc"><i>65</i>&nbsp;            this.weight = weight;</b>
+<b class="fc"><i>66</i>&nbsp;            this.quantity = quantity;</b>
+<i>67</i>&nbsp;        }
+<i>68</i>&nbsp;
+<i>69</i>&nbsp;
+<b class="fc"><i>70</i>&nbsp;    }</b>
+<i>71</i>&nbsp;    public String Print (){
+<b class="fc"><i>72</i>&nbsp;        return &quot;nazwa : &quot;+name +&quot; / stan : &quot;+ condition +&quot; / waga : &quot;+ weight +&quot; / ilosc : &quot;+ quantity;</b>
+<i>73</i>&nbsp;    }
+<i>74</i>&nbsp;    public void PrintV (){
+<b class="fc"><i>75</i>&nbsp;        System.out.println(&quot;nazwa : &quot;+name +&quot; / stan : &quot;+ condition +&quot; / waga : &quot;+ weight +&quot; / ilosc : &quot;+ quantity);</b>
+<b class="fc"><i>76</i>&nbsp;    }</b>
+<i>77</i>&nbsp;
+<i>78</i>&nbsp;    public double getWeight() {
+<b class="fc"><i>79</i>&nbsp;        return weight;</b>
+<i>80</i>&nbsp;    }
+<i>81</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-04-11 00:17</div>
+</div>
+</body>
+</html>

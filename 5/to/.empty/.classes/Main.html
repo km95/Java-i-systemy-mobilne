@@ -1,0 +1,142 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Main</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">&lt;empty package name&gt;</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Main (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Main</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 55)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;
+<b class="nc"><i>2</i>&nbsp;public class Main {</b>
+<i>3</i>&nbsp;    public static void main(String[] args) {
+<b class="nc"><i>4</i>&nbsp;        FulfillmentCenterContainer contenerMagazin = new FulfillmentCenterContainer();</b>
+<b class="nc"><i>5</i>&nbsp;        System.out.println(&quot;Tworzenie magazynów :&quot;);</b>
+<b class="nc"><i>6</i>&nbsp;        contenerMagazin.addCenter(&quot;Krakow&quot;,4000);</b>
+<b class="nc"><i>7</i>&nbsp;        contenerMagazin.addCenter(&quot;Warszawa&quot;,5000);</b>
+<b class="nc"><i>8</i>&nbsp;        contenerMagazin.addCenter(&quot;Wroclaw&quot;,3000);</b>
+<b class="nc"><i>9</i>&nbsp;        contenerMagazin.addCenter(&quot;Gdansk&quot;,2000);</b>
+<b class="nc"><i>10</i>&nbsp;        contenerMagazin.addCenter(&quot;Zakopane&quot;,2000);</b>
+<b class="nc"><i>11</i>&nbsp;        contenerMagazin.summary();</b>
+<b class="nc"><i>12</i>&nbsp;        System.out.println(&quot;Usuwamy Gdansk bo za daleko&quot;);</b>
+<b class="nc"><i>13</i>&nbsp;        contenerMagazin.removeCenter(&quot;Gdansk&quot;);</b>
+<b class="nc"><i>14</i>&nbsp;        System.out.println(&quot;Dodajemy produkty do miast&quot;);</b>
+<b class="nc"><i>15</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Krakow&quot;).addProduct(new Item(&quot;Bluzy&quot;, Item.ItemCondition.NEW,2.2,100));</b>
+<b class="nc"><i>16</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Krakow&quot;).addProduct(new Item(&quot;Spodnie&quot;, Item.ItemCondition.NEW,3.2,200));</b>
+<b class="nc"><i>17</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Krakow&quot;).addProduct(new Item(&quot;Koszule&quot;, Item.ItemCondition.NEW,1.2,500));</b>
+<b class="nc"><i>18</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Krakow&quot;).addProduct(new Item(&quot;Koszulki&quot;, Item.ItemCondition.NEW,1.2,10));</b>
+<b class="nc"><i>19</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Krakow&quot;).addProduct(new Item(&quot;Skarpetki&quot;, Item.ItemCondition.NEW,0.2,50));</b>
+<b class="nc"><i>20</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Krakow&quot;).addProduct(new Item(&quot;Bluzy&quot;, Item.ItemCondition.NEW,0.2,5000));</b>
+<b class="nc"><i>21</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Warszawa&quot;).addProduct(new Item(&quot;Bluzy&quot;, Item.ItemCondition.USED,2.2,1000));</b>
+<b class="nc"><i>22</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Warszawa&quot;).addProduct(new Item(&quot;Koszule&quot;, Item.ItemCondition.USED,3.2,2000));</b>
+<b class="nc"><i>23</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Wroclaw&quot;).addProduct(new Item(&quot;Koszule&quot;, Item.ItemCondition.REFURBISHER,1.2,2500));</b>
+<b class="nc"><i>24</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Wroclaw&quot;).addProduct(new Item(&quot;Skarpetki&quot;, Item.ItemCondition.REFURBISHER,0.2,400));</b>
+<b class="nc"><i>25</i>&nbsp;        System.out.println(&quot;Puste:&quot;);</b>
+<b class="nc"><i>26</i>&nbsp;        contenerMagazin.findEmpty();</b>
+<b class="nc"><i>27</i>&nbsp;        System.out.println(&quot;Dostepne magazyny:&quot;);</b>
+<b class="nc"><i>28</i>&nbsp;        contenerMagazin.summary();</b>
+<b class="nc"><i>29</i>&nbsp;        System.out.println(&quot;Magazyn Wroclaw&quot;);</b>
+<b class="nc"><i>30</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Wroclaw&quot;).summary();</b>
+<b class="nc"><i>31</i>&nbsp;        System.out.println(&quot;Dodanie produktu do Wroclaw&quot;);</b>
+<b class="nc"><i>32</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Wroclaw&quot;).addProduct(new Item(&quot;Koszule&quot;, Item.ItemCondition.REFURBISHER,1.2,100));</b>
+<b class="nc"><i>33</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Wroclaw&quot;).summary();</b>
+<b class="nc"><i>34</i>&nbsp;        System.out.println(&quot;Zmniejszamy produkty w Wroclawiu&quot;);</b>
+<b class="nc"><i>35</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Wroclaw&quot;).getProduct(new Item(&quot;Koszule&quot;, Item.ItemCondition.REFURBISHER,1.2,2000));</b>
+<b class="nc"><i>36</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Wroclaw&quot;).summary();</b>
+<b class="nc"><i>37</i>&nbsp;        System.out.println(&quot;Usuwamy koszule we Wroclawiu&quot;);</b>
+<b class="nc"><i>38</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Wroclaw&quot;).removeProduct(new Item(&quot;Skarpetki&quot;, Item.ItemCondition.REFURBISHER,0.2,400));</b>
+<b class="nc"><i>39</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Wroclaw&quot;).summary();</b>
+<b class="nc"><i>40</i>&nbsp;        System.out.println(&quot;Szukamy w Krakowie Spodni&quot;+contenerMagazin.getFulfillmentCenter(&quot;Krakow&quot;).search(&quot;Spodnie&quot;));</b>
+<b class="nc"><i>41</i>&nbsp;        System.out.println(&quot;Szukamy w Krakowie Koszu&quot;);</b>
+<b class="nc"><i>42</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Krakow&quot;).searchPartial(&quot;Koszu&quot;);</b>
+<b class="nc"><i>43</i>&nbsp;        System.out.println(&quot;Szukamy produktow uzywanych w Krakowowie:&quot;);</b>
+<b class="nc"><i>44</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Krakow&quot;).countByCondition(Item.ItemCondition.USED);</b>
+<b class="nc"><i>45</i>&nbsp;        System.out.println(&quot;Wyswietlamy wszystkie produkty bo nie ma nic uzywanego :&quot;);</b>
+<b class="nc"><i>46</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Krakow&quot;).summary();</b>
+<b class="nc"><i>47</i>&nbsp;        System.out.println(&quot;Posortujemy rzeczy po nazwie &quot;);</b>
+<b class="nc"><i>48</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Krakow&quot;).sortByName();</b>
+<b class="nc"><i>49</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Krakow&quot;).summary();</b>
+<b class="nc"><i>50</i>&nbsp;        System.out.println(&quot;Posortujemy rzeczy po ilosci  &quot;);</b>
+<b class="nc"><i>51</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Krakow&quot;).sortByAmount();</b>
+<b class="nc"><i>52</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Krakow&quot;).summary();</b>
+<b class="nc"><i>53</i>&nbsp;        System.out.println(&quot;Szukamy najwiekszej liczby produktow w warszawie &quot;);</b>
+<b class="nc"><i>54</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Warszawa&quot;).max();</b>
+<b class="nc"><i>55</i>&nbsp;        System.out.println(&quot;Wszystkie produkty w Warszawie :&quot;);</b>
+<b class="nc"><i>56</i>&nbsp;        contenerMagazin.getFulfillmentCenter(&quot;Warszawa&quot;).summary();</b>
+<b class="nc"><i>57</i>&nbsp;        contenerMagazin.summary();</b>
+<i>58</i>&nbsp;    }
+<i>59</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-04-11 00:17</div>
+</div>
+</body>
+</html>
