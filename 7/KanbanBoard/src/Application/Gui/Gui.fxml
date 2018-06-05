@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPaneGlobalID" prefHeight="402.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Gui.GuiPresenter">
+   <children>
+      <AnchorPane fx:id="anchorPaneMainID" layoutX="2.0" prefHeight="424.0" prefWidth="800.0">
+         <children>
+            <MenuBar fx:id="menuBarID" prefHeight="32.0" prefWidth="800.0">
+              <menus>
+                <Menu fx:id="fileID" mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#ClossApp" text="Close" />
+                        <Menu mnemonicParsing="false" text="Save/Load">
+                          <items>
+                            <MenuItem fx:id="IdSave" mnemonicParsing="false" text="Save" />
+                              <MenuItem fx:id="IdLoad" mnemonicParsing="false" text="Load" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Export/Import">
+                          <items>
+                              <MenuItem fx:id="exportToFileID" mnemonicParsing="false" text="Export" />
+                              <MenuItem fx:id="importFromFileID" mnemonicParsing="false" text="Import" />
+                          </items>
+                        </Menu>
+                  </items>
+                </Menu>
+                <Menu fx:id="aboutID" mnemonicParsing="false" />
+              </menus>
+            </MenuBar>
+            <Button fx:id="newTaskButtonID" layoutX="353.0" layoutY="384.0" mnemonicParsing="false" text="Add new task" />
+            <ListView fx:id="toDoID" layoutX="14.0" layoutY="87.0" prefHeight="273.0" prefWidth="210.0">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#delete1" text="Delete" />
+                        <MenuItem mnemonicParsing="false" onAction="#edit1" text="Edit" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu></ListView>
+            <Label layoutX="14.0" layoutY="57.0" text="TO DO" />
+            <ListView fx:id="inProgressID" layoutX="292.0" layoutY="87.0" prefHeight="273.0" prefWidth="210.0">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#delete2" text="Delete" />
+                        <MenuItem mnemonicParsing="false" onAction="#edit2" text="Edit" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu></ListView>
+            <ListView fx:id="doneID" layoutX="570.0" layoutY="87.0" prefHeight="273.0" prefWidth="210.0">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#delete3" text="Delete" />
+                        <MenuItem mnemonicParsing="false" onAction="#edit3" text="Edit" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu></ListView>
+            <Label layoutX="292.0" layoutY="57.0" text="IN PROGRESS" />
+            <Label layoutX="570.0" layoutY="57.0" text="DONE" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
